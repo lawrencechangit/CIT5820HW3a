@@ -24,10 +24,10 @@ def encrypt(pk,m):
 def decrypt(sk,c):
     c1=c[0]
     c2=c[1]
-    firstpart=c2%p
-    secondpart=(c1**-sk)%p
-    m = (firstpart*secondpart)%p
-    print("Decrypted message is ",m)
+    firstpart=pow(c2,1,p)
+    secondpart=pow(c1,-sk,p)
+    m = pow(firstpart*secondpart,1,p)
+    print("Message is ",m)
     return m
 
 
