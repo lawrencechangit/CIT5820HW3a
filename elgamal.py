@@ -14,7 +14,7 @@ def keygen():
 def encrypt(pk,m):
     r=random.randint(1,q)
     c1 = pow(g,r,p)
-    interim=pk*m
+    interim=pow(pk,r)*m
     c2 = interim%p
 
     return [c1,c2]
