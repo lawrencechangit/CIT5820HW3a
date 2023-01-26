@@ -9,9 +9,6 @@ def keygen():
     sk = random.randint(1,p)
     pk = pow(g,sk,p)
 
-    print("pk is ", pk)
-    print("sk is ", sk)
-
     return pk,sk
 
 def encrypt(pk,m):
