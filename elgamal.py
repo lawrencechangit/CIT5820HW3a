@@ -18,7 +18,6 @@ def encrypt(pk,m):
     firstpart=pow(pk,r,p)
     secondpart=m%p
     c2=(firstpart*secondpart)%p
-    print("encrypted message is ",m)
     return [c1,c2]
 
 def decrypt(sk,c):
@@ -27,7 +26,6 @@ def decrypt(sk,c):
     firstpart=pow(c2,1,p)
     secondpart=pow(c1,-sk,p)
     m = pow(firstpart*secondpart,1,p)
-    print("Message is ",m)
     return m
 
 
